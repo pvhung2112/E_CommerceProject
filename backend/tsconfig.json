@@ -6,7 +6,7 @@
     "lib": ["ES2022"],                         // Backend không cần DOM
     "types": ["node"],                         // Nhận diện process, __dirname, Buffer...
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",                        // Source nằm trong src/
     "sourceMap": true,                         // Debug dễ hơn (map JS về TS)
     "declaration": true,                       // Tạo file .d.ts
 
@@ -24,6 +24,6 @@
     "skipLibCheck": true,
     "isolatedModules": true                    // Bắt buộc cho ts-node/ts-jest
   },
-  "include": ["**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

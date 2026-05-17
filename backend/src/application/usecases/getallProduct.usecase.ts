@@ -2,5 +2,7 @@ export class getallProductUc{
     constructor(){
 
     }
-    excute()
+    execute() : void{
+        
+    }
 }

@@ -13,8 +13,8 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "ts-node index.ts",
-    "dev": "nodemon --exec node --env-file=.env -r ts-node/register index.ts",
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon --exec node --env-file=.env -r ts-node/register src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
