@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                        // Node 18+ hỗ trợ đầy đủ
+    "module": "commonjs",
+    "moduleResolution": "Node16",              // "node" đã deprecated
+    "lib": ["ES2022"],                         // Backend không cần DOM
+    "outDir": "./dist",
+    "rootDir": "./",
+    "sourceMap": true,                         // Debug dễ hơn (map JS về TS)
+    "declaration": true,                       // Tạo file .d.ts
+
+    // Strict - các công ty luôn bật
+    "strict": true,
+    "noUnusedLocals": true,                    // Báo lỗi biến không dùng
+    "noUnusedParameters": true,                // Báo lỗi param không dùng
+    "noImplicitReturns": true,                 // Bắt buộc return đầy đủ
+    "noFallthroughCasesInSwitch": true,        // Switch phải có break
+
+    // Module
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,                   // Bắt buộc cho ts-node/ts-jest
+
+    // Path alias cho Clean Architecture
+    "baseUrl": "./",
+    "paths": {
+      "@domain/*": ["domain/*"],
+      "@application/*": ["application/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@presentation/*": ["presentation/*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
