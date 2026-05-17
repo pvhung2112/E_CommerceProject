@@ -1,6 +1,6 @@
 import { productEntity } from "../../../domain/entities/product.entity";
 
 export interface IproductRepository{
-    getAll() : productEntity[];
+    getAll() : Promise<productEntity[]>;
     save() : Promise<void>;
 }

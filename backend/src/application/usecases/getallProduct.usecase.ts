@@ -1,8 +1,23 @@
-export class getallProductUc{
-    constructor(){
+import { IproductRepository } from "../ports/repositories/iProduct.respository";
+import { productDtooutput } from "../ports/dtos/product.dto";
 
-    }
-    execute() : void{
-        
+export class getallProductUc{
+    constructor(private iproductRepository : IproductRepository){}
+   async execute() : Promise<productDtooutput[]>{
+       const items =  await this.iproductRepository.getAll();
+      const outputs : productDtooutput[] = items.map((item)=>{
+           return {
+             id : item.getId(),
+             name : item.getName(),
+            price : {
+                amount : item.getPrice().getAmount(),
+                currency : item.getPrice().getCurrency()
+            },
+            create_at : item.getCreateAt()
+           }
+
+      })
+      console.log(outputs);
+      return outputs;
     }
 }
