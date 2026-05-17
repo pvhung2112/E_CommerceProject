@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2022",                        // Node 18+ hỗ trợ đầy đủ
-    "module": "commonjs",
+    "module": "Node16",                        // Phải khớp với moduleResolution
     "moduleResolution": "Node16",              // "node" đã deprecated
     "lib": ["ES2022"],                         // Backend không cần DOM
+    "types": ["node"],                         // Nhận diện process, __dirname, Buffer...
     "outDir": "./dist",
     "rootDir": "./",
     "sourceMap": true,                         // Debug dễ hơn (map JS về TS)
@@ -21,16 +22,7 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "isolatedModules": true,                   // Bắt buộc cho ts-node/ts-jest
-
-    // Path alias cho Clean Architecture
-    "baseUrl": "./",
-    "paths": {
-      "@domain/*": ["domain/*"],
-      "@application/*": ["application/*"],
-      "@infrastructure/*": ["infrastructure/*"],
-      "@presentation/*": ["presentation/*"]
-    }
+    "isolatedModules": true                    // Bắt buộc cho ts-node/ts-jest
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", "dist"]
