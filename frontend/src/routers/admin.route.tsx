@@ -1,13 +1,18 @@
 
 import LayoutAdmin from "../layouts/layoutAdmin";
-
-function AdminRouter(){
-return{
-  path :  "/admin",
-    element : <LayoutAdmin/>,
-    children : [
-        
-    ]
-}
-}
-export default AdminRouter;
+import Protected from "./protected.route";
+//private
+export const adminRouter = [
+    {
+        path : "/admin",
+        element : <LayoutAdmin/>,
+        children : [
+            { 
+                element : <Protected/>,
+                children:  [
+                    
+                ]
+            }
+        ]
+    }
+]

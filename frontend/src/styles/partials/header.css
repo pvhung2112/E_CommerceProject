@@ -9,9 +9,10 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     
 }
+
 .header .container{
     display: flex;
-    justify-content: space-between;
+    gap: 45px;
     align-items: center;
 }
 .header .container a{
@@ -20,7 +21,6 @@
     font-size: 19px;
     font-weight: 500;
 }
-
 
 .header .container .header-above{
     width: 70px;
@@ -33,8 +33,9 @@ img{
     object-fit: cover;
 }
 .header .container .header-menu {
-    width: 22%;
-    margin-right: 250px;
+    width: 18%;
+    margin-right: auto;
+   
 }
 .header .container .header-menu .header-menu-list{
     display: flex;
@@ -43,7 +44,18 @@ img{
     justify-content: space-between;
     
 }
+.header-menu-list a:hover {
+  color: #111;
+}
 
+/* ── Active ── */
+.header-menu-list a.active {
+  color: #111;
+  font-weight: 600;
+  padding-bottom: 3px;
+  padding: 0 3px;
+  border-bottom: 3px solid #111;
+}
 
 .header .container .header-actions {
     width: 25%;

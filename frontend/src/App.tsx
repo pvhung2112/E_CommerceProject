@@ -1,11 +1,14 @@
-import AllRouters from './routers/index.route';
 
 import './App.css';
+import AllRouters from './routers/allrouters.route';
+
 
 function App() {
-  return (
-   <AllRouters/>
-  );
+  return(
+    <>
+    <AllRouters/>
+    </>
+  )
 }
 
 export default App;
