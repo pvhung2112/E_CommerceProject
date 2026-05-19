@@ -1,4 +1,4 @@
-import { productdependenceIject } from "../../../../infrastructure/containers/product.container";
+import { productdependenceIject } from "../../../../application/ports/containers/iProduct.container";
 import { Request,Response } from "express";
 export class productController{
     constructor(private deps : productdependenceIject){}

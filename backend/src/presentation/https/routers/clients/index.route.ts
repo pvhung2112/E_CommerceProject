@@ -1,6 +1,7 @@
 import { Express } from "express"
-import { dashbroadRouter } from "./dashbroad.route"
+import { dashbroadRouter } from "./dashboard.route"
 import { dependencies } from "../../../../infrastructure/containers/index.container";
 export const routerClient = (app : Express,deps : dependencies) =>{
-app.use("/",dashbroadRouter(deps));
+const api = "/api/v1";
+app.use(`${api}/products`,dashbroadRouter(deps));
 }

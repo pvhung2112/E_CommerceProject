@@ -1,0 +1,25 @@
+.section-card{
+    position: relative;
+    margin-top: 110px;
+    height: 700px;
+}
+.section-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.section-card .banner-content{
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    z-index: 10;
+}   
+.section-card .banner-content h1 , .section-card .banner-content p{
+    color: var(--color-foundationWhite);
+}
+.section-card .banner-content a{
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background-color: var(--color-btYellow);
+}

@@ -2,6 +2,8 @@
   "dependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.8.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.6.2",
     "nodemon": "^3.1.14",
@@ -11,7 +13,6 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon --exec node --env-file=.env -r ts-node/register src/index.ts",
@@ -20,5 +21,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/cors": "^2.8.19"
+  }
 }

@@ -1,0 +1,26 @@
+:root{
+  --color-foundationWhite : #FFFFFF;
+  --color-btDarkgreen : #CCD8B1;
+  --color-btYellow : #FFD160;
+  --color-foundationGrey1 :#F8F6F1;
+  --color-foundationGrey2: #EAE7D9;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
