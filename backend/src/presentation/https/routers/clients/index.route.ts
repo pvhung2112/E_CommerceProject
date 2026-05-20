@@ -4,4 +4,5 @@ import { dependencies } from "../../../../infrastructure/containers/index.contai
 export const routerClient = (app : Express,deps : dependencies) =>{
 const api = "/api/v1";
 app.use(`${api}/products`,dashbroadRouter(deps));
+app.use(`${api}/product`,dashbroadRouter(deps))
 }

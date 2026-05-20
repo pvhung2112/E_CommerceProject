@@ -8,7 +8,6 @@ const app : Express = express();
 const port: number = Number(process.env.PORT) || 5000;
 const deps = Containers();
 
-// CORS config
 const corsOptions = {
   origin: process.env.URL_FRONTEND || "http://localhost:3000",
   credentials: true,

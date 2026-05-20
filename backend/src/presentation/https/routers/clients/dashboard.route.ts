@@ -7,5 +7,7 @@ export const dashbroadRouter = (deps : dependencies)=>{
 const router : Router = Router();
 const productControll : productController = new productController(deps.product)
 router.get("/",productControll.getallProduct);
+router.get("/:id",productControll.getDetailproduct);
 return router;
 } 
+

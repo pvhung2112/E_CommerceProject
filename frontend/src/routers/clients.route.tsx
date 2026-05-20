@@ -1,3 +1,5 @@
+
+import ProductDetail from "../components/productDetail";
 import Layoutclients from "../layouts/layoutClients";
 import Account from "../pages/account";
 import Dashbroad from "../pages/dashbroad";
@@ -11,6 +13,11 @@ export const  ClientRouter =  [
             {
             index : true,
             element : <Dashbroad/>
+            
+            },
+            {
+                path : "product/:id",
+                element : <ProductDetail/>
             }
         ]
     },
