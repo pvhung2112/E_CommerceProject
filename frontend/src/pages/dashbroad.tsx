@@ -1,5 +1,5 @@
-import Banner from "../components/heroBaner";
-import Product from "../components/product";
+import Banner from "../shared/partials/heroBaner";
+import Product from "../features/products/components/product";
 function Dashbroad(){
     return(
         <>

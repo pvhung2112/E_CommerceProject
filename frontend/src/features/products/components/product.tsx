@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/components/product.css"
+import "../../shared/styles/components/product.css"
 type Product = {
   id: string;
   name: string;

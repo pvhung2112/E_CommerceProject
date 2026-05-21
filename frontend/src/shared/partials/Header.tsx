@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
 import { RiShoppingCartFill } from "react-icons/ri";
-import '../styles/partials/header.css'
+import '../../shared/styles/partials/header.css'
 function Header(){
 return(
     <>

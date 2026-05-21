@@ -1,6 +1,6 @@
 
-import LayoutAdmin from "../layouts/layoutAdmin";
-import Protected from "./protected.route";
+import LayoutAdmin from "../../layouts/layoutAdmin";
+import Protected from "./configRoutes/protected.route";
 //private
 export const adminRouter = [
     {

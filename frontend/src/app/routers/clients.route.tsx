@@ -1,9 +1,9 @@
 
-import ProductDetail from "../components/productDetail";
-import Layoutclients from "../layouts/layoutClients";
-import Account from "../pages/account";
-import Dashbroad from "../pages/dashbroad";
-import Protected from "./protected.route";
+import ProductDetail from "../../features/products/components/productDetail";
+import Layoutclients from "../../layouts/layoutClients";
+import Account from "../../pages/account";
+import Dashbroad from "../../pages/dashbroad";
+import Protected from "./configRoutes/protected.route";
 export const  ClientRouter =  [
 //public
     {   
