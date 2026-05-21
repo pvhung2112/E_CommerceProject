@@ -1,5 +1,5 @@
-import { IproductRepository } from "../ports/repositories/iProduct.repository";
-import { productDtooutput } from "../ports/dtos/product.dto";
+import { IproductRepository } from "../../ports/repositories/iProduct.repository";
+import { productDtooutput } from "../../ports/dtos/product.dto";
 
 export class getallProductUc {
     constructor(private iproductRepository: IproductRepository) { }

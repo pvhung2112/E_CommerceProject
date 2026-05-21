@@ -2,7 +2,7 @@
 import ProductDetail from "../../features/products/components/productDetail";
 import Layoutclients from "../../layouts/layoutClients";
 import Account from "../../pages/account";
-import Dashbroad from "../../pages/dashbroad";
+import Home from "../../pages/home";
 import Protected from "./configRoutes/protected.route";
 export const  ClientRouter =  [
 //public
@@ -12,7 +12,7 @@ export const  ClientRouter =  [
         children : [
             {
             index : true,
-            element : <Dashbroad/>
+            element : <Home/>
             
             },
             {

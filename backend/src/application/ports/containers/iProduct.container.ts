@@ -1,7 +1,9 @@
-import { getallProductUc } from "../../usecases/getallProduct.usecase";
-import { getDetailproductuc } from "../../usecases/getDetailproduct.usecase";
+import { getallProductUc } from "../../usecases/products/getallProduct.usecase";
+import { getDetailproductUc } from "../../usecases/products/getDetailproduct.usecase";
+import { createProductUc } from "../../usecases/products/createProduct.usecase";
 
 export interface productdependenceIject {
     getallproductUc: getallProductUc,
-    getdetailproductUc :  getDetailproductuc
+    getdetailproductUc :  getDetailproductUc,
+    createproductUc : createProductUc
 }

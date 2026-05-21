@@ -1,14 +1,14 @@
 import Banner from "../shared/partials/heroBaner";
-import Product from "../features/products/components/product";
-function Dashbroad(){
+import ProductList from "../features/products/components/productList";
+function Home(){
     return(
         <>
         <main className="content">
             <Banner/>
-            <Product/>
+            <ProductList/>
         </main>
         </>
     )
         
 }
-export default Dashbroad;
+export default Home;

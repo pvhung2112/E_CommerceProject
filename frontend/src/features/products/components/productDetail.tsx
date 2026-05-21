@@ -1,24 +1,16 @@
 import { useEffect, useState } from "react";
-
+import { productType } from "../type/product.type";
 import { useParams } from "react-router-dom";
-type Product = {
-  id: string;
-  name: string;
-  create_at: string;
-  price: {
-    amount: number;
-    currency: string;
-  };
-};
+
 function  ProductDetail(){
     const {id}= useParams();
-    const [data,setdata] = useState<Product | null>(null);
+    const [data,setdata] = useState<productType | null>(null);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/api/v1/product/${id}`).then((res)=>{
+        fetch(`http://localhost:5000/api/v1/products/${id}`).then((res)=>{
             return res.json()
         }).then((data)=>{
-            setdata(data.product);
+            setdata(data.data);
         })
     },[])
     console.log(data);

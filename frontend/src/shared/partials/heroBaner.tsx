@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../../shared/styles/components/heroBaner.css"
+import "../styles/components/heroBaner.css"
 function Banner(){
     return(
         <>

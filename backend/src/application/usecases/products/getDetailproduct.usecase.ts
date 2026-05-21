@@ -1,6 +1,6 @@
-import { productDtooutput } from "../ports/dtos/product.dto";
-import { IproductRepository } from "../ports/repositories/iProduct.repository";
-export class getDetailproductuc {
+import { productDtooutput } from "../../ports/dtos/product.dto";
+import { IproductRepository } from "../../ports/repositories/iProduct.repository";
+export class getDetailproductUc {
     constructor(private iproductRepository: IproductRepository) { }
     async execute(id: string): Promise<productDtooutput> {
         const item = await this.iproductRepository.getDetail(id);

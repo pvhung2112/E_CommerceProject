@@ -1,34 +1,13 @@
-import { useEffect, useState } from "react";
+import { productType } from "../type/product.type";
 import { NavLink } from "react-router-dom";
-import "../../shared/styles/components/product.css"
-type Product = {
-  id: string;
-  name: string;
-  create_at: string;
-  price: {
-    amount: number;
-    currency: string;
-  };
-};
-function Product(){
-  const [data,setdata] = useState<Product[]>([]);
-  useEffect(() => {
-  fetch("http://localhost:5000/api/v1/products")
-    .then((res) => res.json())
-    .then((data) => {
-      setdata(data.products);
-    });
-}, []);
-  console.log(data);
-return(
-    <>
-    <h2>the analog system</h2>
-    <div className="products-card">
-      <div className="container">
-      {
-        data && data.map((item)=>{
-            return (
-              <NavLink  to={`/product/${item.id}`} className="product-fillerCategory" key={item.id} >
+type props = {
+    item : productType
+    key : string
+}
+function ProductCard({item, key} : props){
+    return(
+        <>
+        <NavLink  to={`/product/${item.id}`} className="product-fillerCategory" key={key} >
                  <div className="product-image"> 
                     <img src="https://ugmonk.com/cdn/shop/files/card-bar-ls-108_800x.jpg?v=1773847418" alt="" />
                 </div>
@@ -49,12 +28,7 @@ return(
                 </div>
                 <div className="product-note">new</div>
                </NavLink>
-            )
-        })
-      }
-      </div>
-    </div>
-    </>
-)
+        </>
+    )
 }
-export default Product
+export default ProductCard;

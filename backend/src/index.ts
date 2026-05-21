@@ -2,6 +2,7 @@ import express from "express";
 import { Express } from "express";
 import cors from "cors";
 import { routerClient } from "./presentation/https/routers/clients/index.route";
+import { routerAdmin } from "./presentation/https/routers/admins/index.route";
 import {connect} from "./infrastructure/configs/connect";
 import { Containers } from "./infrastructure/containers/index.container";
 const app : Express = express();
@@ -21,6 +22,7 @@ app.use(cors(corsOptions));
 
 connect();
 routerClient(app,deps);
+routerAdmin(app,deps);
 
 
 app.listen(port, () => {
