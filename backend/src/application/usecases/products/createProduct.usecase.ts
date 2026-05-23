@@ -14,7 +14,7 @@ export class createProductUc{
         amount : product.getPrice().getAmount(),
         currency : product.getPrice().getCurrency()
     },
-
+    description : product.getDescription(),
     create_at : product.getCreateAt()
         }
         return output;

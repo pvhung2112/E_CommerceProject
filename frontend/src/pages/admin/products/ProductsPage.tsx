@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { NavLink } from "react-router-dom";
 
 function Products() {
@@ -8,7 +10,17 @@ function Products() {
     { id: '#P004', name: 'Balo Du Lịch', category: 'Túi Xách', price: '₫450.000', stock: 8, status: 'cancelled' },
     { id: '#P005', name: 'Mũ Lưỡi Trai', category: 'Phụ Kiện', price: '₫95.000', stock: 67, status: 'success' },
   ];
-
+  const [data,setdata] = useState(null);
+  useEffect(()=>{
+    fetch("http://localhost:5000/api/v1/products").then((res)=> res.json())
+    .then((products)=>{
+      setTimeout(() => {
+         setdata(products.data);
+      }, 10000);
+     
+    })
+   
+  },[])
   return (
     <div>
       <div className="page-header">
@@ -55,7 +67,7 @@ function Products() {
       </div>
 
       {/* Products Table */}
-      <div className="table-container">
+      {data ?  <div className="table-container">
         <div className="table-header">
           <div className="table-header-title">Danh sách sản phẩm</div>
           <span style={{ color: '#999' }}>Tổng: 245 sản phẩm</span>
@@ -103,7 +115,7 @@ function Products() {
             ))}
           </tbody>
         </table>
-      </div>
+      </div> : <div>đg load</div> }
 
       {/* Pagination */}
       <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center', gap: '10px' }}>
@@ -115,6 +127,6 @@ function Products() {
       </div>
     </div>
   );
-}
+ }
 
 export default Products;

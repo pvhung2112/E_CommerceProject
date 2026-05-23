@@ -11,6 +11,7 @@ export class getDetailproductUc {
                     amount: item.getPrice().getAmount(),
                     currency: item.getPrice().getCurrency()
                 },
+                 description : item.getDescription(),
                 create_at: item.getCreateAt()
         }
       return output;

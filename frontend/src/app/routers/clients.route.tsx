@@ -1,29 +1,28 @@
 
-import ProductDetail from "../../features/products/components/productDetail";
-import Layoutclients from "../../layouts/layoutClients";
-import Account from "../../pages/account";
-import Home from "../../pages/home";
+import LayoutClients from "../../layouts/layoutClients";
+import Homepage from "../../pages/clients/HomePage";
+import ProductDetailPage from "../../pages/clients/ProductDetailPage";
+import AccountPage from "../../pages/clients/AccountPage";
 import Protected from "./configRoutes/protected.route";
 export const  ClientRouter =  [
 //public
     {   
         path : "/",
-        element : <Layoutclients/>,
+        element : <LayoutClients/>,
         children : [
             {
             index : true,
-            element : <Home/>
-            
+            element : <Homepage/>
             },
             {
                 path : "product/:id",
-                element : <ProductDetail/>
+                element : <ProductDetailPage/>
             }
         ]
     },
     //private
     {   
-        element : <Layoutclients/>,
+        element : <LayoutClients/>,
         children : [
             {
                 path : "/",
@@ -31,7 +30,7 @@ export const  ClientRouter =  [
                 children : [
                     {
                         path : "account",
-                        element : <Account/>
+                        element : <AccountPage/>
                     }
                 ]
              }   

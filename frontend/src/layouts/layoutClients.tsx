@@ -3,7 +3,7 @@ import Footer from "../shared/partials/footer";
 import Header from "../shared/partials/Header";
 
 
-function Layoutclients(){
+function LayoutClients(){
     return (
         <>
         <Header/>
@@ -12,4 +12,4 @@ function Layoutclients(){
         </>
     )
 }
-export default Layoutclients;
+export default LayoutClients;

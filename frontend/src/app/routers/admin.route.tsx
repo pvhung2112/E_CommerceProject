@@ -1,14 +1,12 @@
-
 import AdminLayout from "../../layouts/AdminLayout";
 import Protected from "./configRoutes/protected.route";
-import Dashboard from "../../pages/admin/Dashboard";
-import Products from "../../pages/admin/Products";
-import Orders from "../../pages/admin/Orders";
-import Categories from "../../pages/admin/Categories";
-import Users from "../../pages/admin/Users";
-import Settings from "../../pages/admin/Settings";
-import CreateProduct from "../../pages/admin/createProduct";
-
+import DashBoardPage from "../../pages/admin/users/DashBoardPage";
+import ProductsPage from "../../pages/admin/products/ProductsPage";
+import CreateProductPage from "../../pages/admin/products/createProductpage";
+import OrdersPage from "../../pages/admin/oders/OrdersPage";
+import CategoriesPage from "../../pages/admin/categories/categoriesPage";
+import UsersPage from "../../pages/admin/UsersPage";
+import SettingsPage from "../../pages/admin/SettingsPage";
 
 //private
 export const adminRouter = [
@@ -21,39 +19,31 @@ export const adminRouter = [
                 children:  [
                     {
                         path: "dashboard",
-                        element: <Dashboard/>
+                        element: <DashBoardPage/>
                     },
                     {
                         path: "products",
-                        element: <Products/>,
+                        element: <ProductsPage/>,
                     },
                      {
                         path : "products/create",
-                        element : <CreateProduct/>
+                        element : <CreateProductPage/>
                     },
                     {
                         path: "orders",
-                        element: <Orders/>
+                        element: <OrdersPage/>
                     },
                     {
                         path: "categories",
-                        element: <Categories/>
+                        element: <CategoriesPage/>
                     },
                     {
                         path: "users",
-                        element: <Users/>
-                    },
-                    {
-                        path: "sellers",
-                        element: <Users/>
-                    },
-                    {
-                        path: "analytics",
-                        element: <Dashboard/>
+                        element: <UsersPage/>
                     },
                     {
                         path: "settings",
-                        element: <Settings/>
+                        element: <SettingsPage/>
                     }
                 ]
             }
