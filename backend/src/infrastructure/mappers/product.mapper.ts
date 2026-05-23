@@ -11,7 +11,7 @@ export class productMapper{
         })
         return items;
     }
-    static toPersistence(dto : productDtoinput) {
+    static toPersistence(dto : productDtoinput) { //entity->db
         const item = new productModel(
             {
                 name: dto.name,
@@ -23,4 +23,5 @@ export class productMapper{
         )
         return item;
     }
+     
 }

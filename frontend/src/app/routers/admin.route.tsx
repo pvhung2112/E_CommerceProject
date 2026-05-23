@@ -7,6 +7,8 @@ import Orders from "../../pages/admin/Orders";
 import Categories from "../../pages/admin/Categories";
 import Users from "../../pages/admin/Users";
 import Settings from "../../pages/admin/Settings";
+import CreateProduct from "../../pages/admin/createProduct";
+
 
 //private
 export const adminRouter = [
@@ -23,7 +25,11 @@ export const adminRouter = [
                     },
                     {
                         path: "products",
-                        element: <Products/>
+                        element: <Products/>,
+                    },
+                     {
+                        path : "products/create",
+                        element : <CreateProduct/>
                     },
                     {
                         path: "orders",

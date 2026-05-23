@@ -17,8 +17,10 @@ export class productRepository implements IproductRepository {
         const [item] = productMapper.todomain([doc]);
         return item;
     }
-    async save(item : productDtoinput) : Promise<void>{
-      const product = productMapper.toPersistence(item);
-      await product.save();
+    async save(itemInput : productDtoinput) : Promise<productEntity>{
+      const persistence = productMapper.toPersistence(itemInput);
+      await persistence.save();
+     const [product] = productMapper.todomain([persistence]);
+        return product;
     }
 }

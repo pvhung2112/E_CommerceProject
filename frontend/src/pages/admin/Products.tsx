@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function Products() {
   const products = [
     { id: '#P001', name: 'Áo Thun Trắng', category: 'Quần Áo', price: '₫150.000', stock: 45, status: 'success' },
@@ -15,7 +17,8 @@ function Products() {
             <h1 className="page-title">Quản lý Sản phẩm</h1>
             <p className="page-subtitle">Quản lý toàn bộ sản phẩm của cửa hàng</p>
           </div>
-          <button className="btn-admin btn-primary">➕ Thêm sản phẩm mới</button>
+
+          <NavLink to="/admin/products/create" className="btn-admin btn-primary" >➕ Thêm sản phẩm mới</NavLink>
         </div>
       </div>
 

@@ -19,7 +19,7 @@ export class productController{
         })
     }
    createProduct = async(req : Request, res : Response) : Promise<void>=>{
-
+        console.log(req.body);
        const dto : productDtoinput  = {
             name : req.body.name,
             price : {
@@ -28,9 +28,9 @@ export class productController{
                 },
             description : req.body.description
        }
-      const product = await this.deps.createproductUc.execute(dto);
-      console.log(product)
-       res.status(201).json({
+         const product = await this.deps.createproductUc.execute(dto);
+        console.log(product);
+         res.status(201).json({
              status : true,
             data : product,
             message: "Tạo sản phẩm thành công"
