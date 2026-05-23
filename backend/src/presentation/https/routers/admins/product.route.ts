@@ -4,6 +4,6 @@ import { dependencies } from "../../../../infrastructure/containers/index.contai
 export const productRouter =(deps : dependencies)=>{
     const router = Router();
     const productControll : productController = new productController(deps.product)
-    router.get("/create",productControll.createProduct)
+    router.post("/create",productControll.createProduct)
     return router;
 }
