@@ -12,6 +12,7 @@ export class productController{
     }
    getDetailproduct = async(req : Request<{id: string}>, res : Response) : Promise<void> =>{
         const id = req.params.id;
+        
        const product =  await this.deps.getdetailproductUc.execute(id);
         res.status(200).json({
             status : true,

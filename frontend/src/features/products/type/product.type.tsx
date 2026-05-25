@@ -7,3 +7,6 @@ export type productType = {
     currency: string;
   };
 };
+// type props = {
+//   data: productType[] | null
+// }

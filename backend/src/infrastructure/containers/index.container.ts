@@ -1,8 +1,8 @@
 import { productContainer } from "./product.container"
 export const Containers = () =>{
-    return {
+   return {
         product : productContainer()
     }
     
 }
-export type dependencies = ReturnType<typeof Containers>
+export type dependencies = ReturnType<typeof Containers> 

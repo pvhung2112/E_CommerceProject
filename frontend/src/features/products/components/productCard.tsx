@@ -2,12 +2,11 @@ import { productType } from "../type/product.type";
 import { NavLink } from "react-router-dom";
 type props = {
     item : productType
-    key : string
 }
-function ProductCard({item, key} : props){
+function ProductCard({item} : props){
     return(
         <>
-        <NavLink  to={`/product/${item.id}`} className="product-fillerCategory" key={key} >
+        <NavLink  to={`/product/${item.id}`} className="product-fillerCategory"  >
                  <div className="product-image"> 
                     <img src="https://ugmonk.com/cdn/shop/files/card-bar-ls-108_800x.jpg?v=1773847418" alt="" />
                 </div>

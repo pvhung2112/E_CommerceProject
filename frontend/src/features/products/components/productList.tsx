@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
+
 import "../../../shared/styles/components/product.css"
 import { productType } from "../type/product.type";
+
 import ProductCard from "./productCard";
-function ProductList(){
-  const [data,setdata] = useState<productType[]>([]);
-  useEffect(() => {
-  fetch("http://localhost:5000/api/v1/products")
-    .then((res) => res.json())
-    .then((data) => {
-      setdata(data.data);
-    });
-}, []);
+type props = {
+  data : productType[]
+}
+function ProductList({data} : props){
   console.log(data);
 return(
     <>

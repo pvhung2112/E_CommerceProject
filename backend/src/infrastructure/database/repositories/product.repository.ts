@@ -3,7 +3,7 @@ import { IproductRepository } from "../../../application/ports/repositories/iPro
 import { productMapper } from "../../mappers/product.mapper";
 import { productEntity } from "../../../domain/entities/product.entity";
 import { productModel } from "../models/product.model";
-import { productDtoinput } from "../../../application/ports/dtos/product.dto";
+
 
 
 export class productRepository implements IproductRepository {
@@ -17,10 +17,10 @@ export class productRepository implements IproductRepository {
         const [item] = productMapper.todomain([doc]);
         return item;
     }
-    async save(itemInput : productDtoinput) : Promise<productEntity>{
-      const persistence = productMapper.toPersistence(itemInput);
-      await persistence.save();
-     const [product] = productMapper.todomain([persistence]);
-        return product;
+    async save(product : productEntity): Promise<productEntity> {
+        const item = productMapper.toPersistence(product);
+        await item.save();
+        const [productSaved] = productMapper.todomain([item]);
+        return productSaved;
     }
 }
