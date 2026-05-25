@@ -1,12 +1,18 @@
 import { useNavigate, useParams } from "react-router-dom";
-import type { SubmitEvent } from "react";
+import { useEffect, useState, type SubmitEvent } from "react";
 import ProductForm from "../../../features/products/components/productForm";
 import { objForm } from "../../../features/products/type/product.props";
+import { productType } from "../../../features/products/type/product.type";
 
 function EditProductPage(){
     
     const navigate = useNavigate();
     const {id} = useParams();
+    const [data,setdata] = useState<productType | null>(null);
+    useEffect(()=>{
+         fetch(`http://localhost:5000/api/v1/products/${id}`).then((res)=>res.json())
+         .then((product)=> setdata(product.data))
+    },[])
     const handleSubmit = (e :  SubmitEvent<HTMLFormElement>)  =>{
          e.preventDefault();
 
@@ -30,12 +36,13 @@ function EditProductPage(){
     
     const formProps : objForm = {
             type : true,
-            value : "sửa sản phẩm"
+            value : "sửa sản phẩm",
+            data : data
         }
 return (
     <>
 
-        <ProductForm type={formProps} eventForm={handleSubmit}/>
+        <ProductForm type={formProps} eventForm={handleSubmit} />
 
 
     </>

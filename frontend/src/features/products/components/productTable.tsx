@@ -22,7 +22,7 @@ function ProductTable({ data }: props) {
         <tbody>
           {data && data.map((item)=>{
             return(
-              <tr>
+              <tr key={item.id}>
                 <td>{item.id}</td>
             <td>{item.name}</td>
             <td>{item.price.amount} {item.price.currency}</td>

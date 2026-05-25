@@ -1,7 +1,7 @@
 
 import type { SubmitEvent } from "react";
 import { objForm } from "../type/product.props";
-import { NavLink } from "react-router-dom";
+
 type props ={
     eventForm : (e: SubmitEvent<HTMLFormElement>) => void
     type: objForm
@@ -24,6 +24,7 @@ function ProductForm({type,eventForm} : props){
                             type="text"
                             className="cp-input"
                             placeholder="Nhập tên sản phẩm..."
+                            defaultValue={type.data?.name || ""}
                         />
                     </div>
 
@@ -42,13 +43,14 @@ function ProductForm({type,eventForm} : props){
                                     min={0}
                                     className="cp-input"
                                     placeholder="0"
+                                     defaultValue={type.data?.price?.amount || ""}
                                 />
                             </div>
 
                             <div className="cp-price-currency">
                                 <label htmlFor="product-currency" className="cp-sublabel">Đơn vị</label>
                                 <div className="cp-select-wrapper">
-                                    <select id="product-currency" className="cp-select" name = "currency">
+                                    <select id="product-currency" className="cp-select" name = "currency" defaultValue={type.data?.price?.currency || "VND"}>
                                         <option value="VND">VND ₫</option>
                                         <option value="USD">USD $</option>
                                         <option value="EUR">EUR €</option>
@@ -70,13 +72,14 @@ function ProductForm({type,eventForm} : props){
                             name = "description"
                             className="cp-input cp-textarea"
                             placeholder="Nhập mô tả chi tiết về sản phẩm..."
+                            defaultValue={type.data?.description || ""}
                         />
                     </div>
 
                     {/* Actions */}
                     <div className="cp-actions">
                         <button type="button" className="btn-admin btn-secondary">Huỷ</button>
-                        {type.type && <NavLink to="/">{type.value}</NavLink> }
+                        {type.type && <button>{type.value}</button> }
                     </div>
                 </form>
 
