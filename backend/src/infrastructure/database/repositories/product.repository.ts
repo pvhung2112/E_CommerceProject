@@ -17,10 +17,27 @@ export class productRepository implements IproductRepository {
         const [item] = productMapper.todomain([doc]);
         return item;
     }
-    async save(product : productEntity): Promise<productEntity> {
+    async save(product: productEntity): Promise<productEntity> {
         const item = productMapper.toPersistence(product);
         await item.save();
         const [productSaved] = productMapper.todomain([item]);
         return productSaved;
+    }
+    async editOne(product: productEntity): Promise<productEntity> {
+        console.log(product.getPrice().getAmount())
+        console.log(product);
+        const editDoc = await productModel.updateOne({_id : product.getId()} , {
+               $set: {
+            name: product.getName(),
+            images: product.getImages(),
+            amount: product.getPrice().getAmount(),
+            currency: product.getPrice().getCurrency(),
+        
+            description: product.getDescription(),
+            createAt: product.getCreateAt()
+        }
+        });
+        console.log(editDoc);
+        return product;
     }
 }

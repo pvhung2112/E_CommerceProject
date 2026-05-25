@@ -1,11 +1,12 @@
-
+import { useNavigate, useParams } from "react-router-dom";
 import type { SubmitEvent } from "react";
-import { useNavigate } from "react-router-dom";
 import ProductForm from "../../../features/products/components/productForm";
 import { objForm } from "../../../features/products/type/product.props";
 
-function CreateProduct() {
+function EditProductPage(){
+    
     const navigate = useNavigate();
+    const {id} = useParams();
     const handleSubmit = (e :  SubmitEvent<HTMLFormElement>)  =>{
          e.preventDefault();
 
@@ -13,8 +14,8 @@ function CreateProduct() {
         const formdata = new FormData(form);
        const data = Object.fromEntries(formdata); 
        console.log(data);
-       fetch("http://localhost:5000/admin/api/v1/products/create",{
-        method : "POST",
+       fetch(`http://localhost:5000/admin/api/v1/products/edit/${id}`,{
+        method : "PATCH",
          headers: {
         "Content-Type": "application/json"
         },
@@ -26,15 +27,18 @@ function CreateProduct() {
             navigate(-1);
        })
     }
+    
     const formProps : objForm = {
-        type : true,
-        value : "thêm sản phẩm"
-    }
-    return (
-        <>
-        <ProductForm type={formProps} eventForm={handleSubmit}/>
-        </>
-    );
-}
+            type : true,
+            value : "sửa sản phẩm"
+        }
+return (
+    <>
 
-export default CreateProduct;
+        <ProductForm type={formProps} eventForm={handleSubmit}/>
+
+
+    </>
+)
+}
+export default EditProductPage;

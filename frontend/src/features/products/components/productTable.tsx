@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { productType } from "../type/product.type";
 
 type props = {
@@ -22,11 +23,13 @@ function ProductTable({ data }: props) {
           {data && data.map((item)=>{
             return(
               <tr>
+                <td>{item.id}</td>
             <td>{item.name}</td>
             <td>{item.price.amount} {item.price.currency}</td>
-            <td></td>
+            <td>{item.description}</td>
+              <td>{item.create_at}</td>
             <td>
-              <button className="btn-admin btn-sm" style={{ backgroundColor: '#667eea', color: 'white', border: 'none', marginRight: '5px' }}>✏️ Sửa</button>
+              <NavLink to={`/admin/products/edit/${item.id}`} className="btn-admin btn-sm">Sửa</NavLink>
               <button className="btn-admin btn-sm btn-danger">🗑️ Xóa</button>
             </td>
           </tr>

@@ -1,9 +1,13 @@
 
 import type { SubmitEvent } from "react";
+import { objForm } from "../type/product.props";
+import { NavLink } from "react-router-dom";
 type props ={
     eventForm : (e: SubmitEvent<HTMLFormElement>) => void
+    type: objForm
 }
-function ProductForm({eventForm} : props){
+function ProductForm({type,eventForm} : props){
+    console.log(type);
     return(
         <>
 
@@ -72,7 +76,7 @@ function ProductForm({eventForm} : props){
                     {/* Actions */}
                     <div className="cp-actions">
                         <button type="button" className="btn-admin btn-secondary">Huỷ</button>
-                        <button type="submit" className="btn-admin cp-btn-submit" >✅ Tạo sản phẩm</button>
+                        {type.type && <NavLink to="/">{type.value}</NavLink> }
                     </div>
                 </form>
 

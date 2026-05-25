@@ -7,6 +7,7 @@ import OrdersPage from "../../pages/admin/oders/OrdersPage";
 import CategoriesPage from "../../pages/admin/categories/categoriesPage";
 import UsersPage from "../../pages/admin/UsersPage";
 import SettingsPage from "../../pages/admin/SettingsPage";
+import EditProductPage from "../../pages/admin/products/editProductpage";
 
 //private
 export const adminRouter = [
@@ -28,7 +29,12 @@ export const adminRouter = [
                      {
                         path : "products/create",
                         element : <CreateProductPage/>
-                    },
+                    }, 
+                    {
+                        path : "products/edit/:id",
+                        element : <EditProductPage/>
+                    }
+                    ,
                     {
                         path: "orders",
                         element: <OrdersPage/>
