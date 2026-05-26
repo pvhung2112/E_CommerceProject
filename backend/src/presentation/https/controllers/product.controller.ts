@@ -22,12 +22,16 @@ export class productController {
     createProduct = async (req: Request, res: Response): Promise<void> => {
         console.log(req.body);
         const dto: productDtoinput = {
-            name: req.body.name,
+            title: req.body.name,
             price: {
                 amount: req.body.amount,
                 currency: req.body.currency
             },
-            description: req.body.description
+            description: req.body.description,
+            images: req.body.images,
+            stock: req.body.stock,
+            status: req.body.status,
+            discountPercentage: req.body.discountPercentage
         }
         const product = await this.deps.createproductUc.execute(dto);
         console.log(product);
@@ -41,12 +45,16 @@ export class productController {
         console.log(req.body);
         const {id}  = req.params;
         const dto: productDtoinput = {
-            name: req.body.name,
+            title: req.body.name,
             price: {
                 amount: req.body.amount,
                 currency: req.body.currency
             },
-            description: req.body.description
+            description: req.body.description,
+            images: req.body.images,
+            stock: req.body.stock,
+            status: req.body.status,
+            discountPercentage: req.body.discountPercentage
         }
         const product = await this.deps.updateOneproductuc.excute(id,dto);
         console.log(product);

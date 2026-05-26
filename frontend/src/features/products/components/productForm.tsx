@@ -13,7 +13,6 @@ function ProductForm({type,eventForm} : props){
 
                 <form className="cp-form" noValidate onSubmit={eventForm}>
 
-                    {/* Tên sản phẩm */}
                     <div className="cp-field">
                         <label htmlFor="product-name" className="cp-label">
                             Tên sản phẩm <span className="cp-required">*</span>
@@ -28,7 +27,6 @@ function ProductForm({type,eventForm} : props){
                         />
                     </div>
 
-                    {/* Giá tiền */}
                     <div className="cp-field">
                         <label className="cp-label">
                             Giá sản phẩm <span className="cp-required">*</span>
@@ -61,7 +59,7 @@ function ProductForm({type,eventForm} : props){
                         </div>
                     </div>
 
-                    {/* Mô tả */}
+
                     <div className="cp-field">
                         <label htmlFor="product-description" className="cp-label">
                             Mô tả sản phẩm <span className="cp-required">*</span>
@@ -76,7 +74,6 @@ function ProductForm({type,eventForm} : props){
                         />
                     </div>
 
-                    {/* Actions */}
                     <div className="cp-actions">
                         <button type="button" className="btn-admin btn-secondary">Huỷ</button>
                         {type.type && <button>{type.value}</button> }

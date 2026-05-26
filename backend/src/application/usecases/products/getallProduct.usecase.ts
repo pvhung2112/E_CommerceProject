@@ -7,14 +7,21 @@ export class getallProductUc {
         const items = await this.iproductRepository.getAll();
         const outputs: productDtooutput[] = items.map((item) => {
             return {
-                id: item.getId(),
-                name: item.getName(),
+                id: item.data.getId(),
+                title : item.data.getTitle(),
                 price: {
-                    amount: item.getPrice().getAmount(),
-                    currency: item.getPrice().getCurrency()
+                    amount: item.data.getPrice().getAmount(),
+                    currency: item.data.getPrice().getCurrency()
                 },
-                description : item.getDescription(),
-                create_at: item.getCreateAt()
+                description : item.data.getDescription(),
+                images: item.data.getImages(),
+                stock : item.data.getStock(),
+                sellerId : item.data.getSellerId(),
+                status : item.data.getStatus(),
+                discountPercentage : item.data.getDiscountPercentage(),
+                 rating: item.rating,
+                ratingCount: item.ratingCount,
+                sold: item.sold
             }
 
         })

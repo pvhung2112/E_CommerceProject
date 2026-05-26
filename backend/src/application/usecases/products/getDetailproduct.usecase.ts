@@ -5,14 +5,21 @@ export class getDetailproductUc {
     async execute(id: string): Promise<productDtooutput> {
         const item = await this.iproductRepository.getDetail(id);
         const output: productDtooutput = {
-            id: item.getId(),
-            name: item.getName(),
-            price: {
-                amount: item.getPrice().getAmount(),
-                currency: item.getPrice().getCurrency()
-            },
-            description: item.getDescription(),
-            create_at: item.getCreateAt()
+                 id: item.data.getId(),
+                title : item.data.getTitle(),
+                price: {
+                    amount: item.data.getPrice().getAmount(),
+                    currency: item.data.getPrice().getCurrency()
+                },
+                description : item.data.getDescription(),
+                images: item.data.getImages(),
+                stock : item.data.getStock(),
+                sellerId : item.data.getSellerId(),
+                status : item.data.getStatus(),
+                discountPercentage : item.data.getDiscountPercentage(),
+                 rating: item.rating,
+                ratingCount: item.ratingCount,
+                sold: item.sold
         }
         return output;
     }
