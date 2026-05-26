@@ -8,15 +8,20 @@ import CategoriesPage from "../../pages/admin/categories/categoriesPage";
 import UsersPage from "../../pages/admin/UsersPage";
 import SettingsPage from "../../pages/admin/SettingsPage";
 import EditProductPage from "../../pages/admin/products/editProductpage";
+import AdminLoginPage from "../../pages/admin/auth/adminLoginpage";
 
 //private
 export const adminRouter = [
     {
+        path : "admin/login",
+        element : <AdminLoginPage/>
+    },
+    {   
         path : "/admin",
         element : <AdminLayout/>,
         children : [
             { 
-                element : <Protected/>,
+                element : <Protected reDirect="/admin/login"/>,
                 children:  [
                     {
                         path: "dashboard",

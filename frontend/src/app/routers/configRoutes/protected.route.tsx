@@ -1,9 +1,11 @@
 import { Navigate, Outlet } from "react-router-dom";
-
-function Protected(){
-    const login = true;
+export type props ={
+    reDirect : string
+}
+function Protected( {reDirect} : props){
+    const login =false;
     return(
-        login ? <Outlet/> : <Navigate to="/login"/> 
+        login ? <Outlet/> : <Navigate to={reDirect}/> 
     )
 }
 export default Protected;

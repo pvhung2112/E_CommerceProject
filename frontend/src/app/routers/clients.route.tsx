@@ -4,7 +4,13 @@ import Homepage from "../../pages/clients/HomePage";
 import ProductDetailPage from "../../pages/clients/ProductDetailPage";
 import AccountPage from "../../pages/clients/AccountPage";
 import Protected from "./configRoutes/protected.route";
+import ClientsLoginPage from "../../pages/clients/auth/clientLoginpage";
 export const  ClientRouter =  [
+    {
+        path : "/login",
+        element : <ClientsLoginPage/>
+    }
+    ,
 //public
     {   
         path : "/",
@@ -26,7 +32,7 @@ export const  ClientRouter =  [
         children : [
             {
                 path : "/",
-                element : <Protected/>,
+                element : <Protected reDirect="/login"/>,
                 children : [
                     {
                         path : "account",

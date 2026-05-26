@@ -6,11 +6,11 @@ export interface productDtooutput{
         currency : string;
     };
     images : string[];
-    stock : number;
+    stock ?: number;
     sellerId : string;
     status : string;
     discountPercentage : number;
-    description : string;
+    description ?: string;
     rating ?: number;
     ratingCount ?: number;
     sold ?: number;
