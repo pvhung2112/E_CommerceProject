@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { productModel } from "../database/models/product.model";
-import { userModel } from "../database/models/user.model";
+import { userModel } from "../database/models/account.model";
 import { reviewModel } from "../database/models/reviews.model";
 import slugify from "slugify";
 

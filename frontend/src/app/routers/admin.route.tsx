@@ -13,48 +13,48 @@ import AdminLoginPage from "../../pages/admin/auth/adminLoginpage";
 //private
 export const adminRouter = [
     {
-        path : "admin/login",
-        element : <AdminLoginPage/>
+        path: "admin/login",
+        element: <AdminLoginPage />
     },
-    {   
-        path : "/admin",
-        element : <AdminLayout/>,
-        children : [
-            { 
-                element : <Protected reDirect="/admin/login"/>,
-                children:  [
+    {
+        path: "/admin",
+        element: <AdminLayout />,
+        children: [
+            {
+                element: <Protected reDirect="/admin/login" />,
+                children: [
                     {
                         path: "dashboard",
-                        element: <DashBoardPage/>
+                        element: <DashBoardPage />
                     },
                     {
                         path: "products",
-                        element: <ProductsPage/>,
+                        element: <ProductsPage />,
                     },
-                     {
-                        path : "products/create",
-                        element : <CreateProductPage/>
-                    }, 
                     {
-                        path : "products/edit/:id",
-                        element : <EditProductPage/>
+                        path: "products/create",
+                        element: <CreateProductPage />
+                    },
+                    {
+                        path: "products/edit/:id",
+                        element: <EditProductPage />
                     }
                     ,
                     {
                         path: "orders",
-                        element: <OrdersPage/>
+                        element: <OrdersPage />
                     },
                     {
                         path: "categories",
-                        element: <CategoriesPage/>
+                        element: <CategoriesPage />
                     },
                     {
                         path: "users",
-                        element: <UsersPage/>
+                        element: <UsersPage />
                     },
                     {
                         path: "settings",
-                        element: <SettingsPage/>
+                        element: <SettingsPage />
                     }
                 ]
             }

@@ -53,4 +53,10 @@ export class productRepository implements IproductRepository {
         console.log(editDoc);
         return product;
     }
+    async deleteOne(id : string) : Promise<void>{
+        await productModel.updateOne({_id : id}, { deleted: {
+         status: true,
+         deletedAt: new Date()
+      } });
+    }
 }

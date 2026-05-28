@@ -5,5 +5,7 @@ export interface IproductRepository {
     getAll(): Promise<productWithstats[]>;
     getDetail(id: string): Promise<productWithstats>;
     save(product : productEntity): Promise<productEntity>;
-    editOne(product : productEntity) : Promise<productEntity>
+    editOne(product : productEntity) : Promise<productEntity>;
+    deleteOne(id : string) : Promise<void>;
+
 }   

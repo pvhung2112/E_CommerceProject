@@ -20,7 +20,7 @@ function EditProductPage(){
         const formdata = new FormData(form);
        const data = Object.fromEntries(formdata); 
        console.log(data);
-       fetch(`http://localhost:5000/admin/api/v1/products/edit/${id}`,{
+       fetch(`http://localhost:5000/sellers/api/v1/products/edit/${id}`,{
         method : "PATCH",
          headers: {
         "Content-Type": "application/json"
@@ -36,6 +36,7 @@ function EditProductPage(){
     
     const formProps : objForm = {
             type : true,
+            display : true,
             value : "sửa sản phẩm",
             data : data
         }

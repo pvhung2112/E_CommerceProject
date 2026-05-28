@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const accountSchema = new Schema({
   name : {
     type : String
   },
-  roles :{
-    type : [String],
-    default : ["user"]
+  rolesId :{
+    type : Schema.Types.ObjectId ,
+    default : ""
   },
   email :{
     type : String,
@@ -25,12 +25,18 @@ const userSchema = new Schema({
     enum : ["active", "inactive"],
     default : "active"
   },
-  deleted : {
-    type : Date,
-    default : null
-  }
+ deleted: {
+    status: {
+        type: Boolean,
+        default: false
+    },
+    deletedAt: {
+        type: Date,
+        default: null
+    }
+}
 
 },{
     timestamps : true
 });
-export const userModel = mongoose.model('users', userSchema ,'users');
+export const accountModel = mongoose.model('accounts', accountSchema ,'accounts');

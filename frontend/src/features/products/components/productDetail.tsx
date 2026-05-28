@@ -9,7 +9,7 @@ function  ProductDetail({data} : props){
         <>
        <div style={{ marginTop: "150px" }}>
              <div >productdetail</div>
-        {data && <div>{data.name}</div> }
+        {data && <div>{data.title}</div> }
         </div>
        
         </>

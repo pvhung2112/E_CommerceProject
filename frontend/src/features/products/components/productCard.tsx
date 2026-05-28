@@ -1,32 +1,39 @@
 import { productType } from "../type/product.type";
 import { NavLink } from "react-router-dom";
+// import StartFunction from "../../../shared/partials/star";
+// import { FaUser } from "react-icons/fa";
+
 type props = {
-    item : productType
+    item: productType
 }
-function ProductCard({item} : props){
-    return(
+function ProductCard({ item }: props) {
+    return (
         <>
-        <NavLink  to={`/product/${item.id}`} className="product-fillerCategory"  >
-                 <div className="product-image"> 
-                    <img src="https://ugmonk.com/cdn/shop/files/card-bar-ls-108_800x.jpg?v=1773847418" alt="" />
+            <NavLink to={`/product/${item.id}`} className="product-fillerCategory"  >
+                <div className="product-image">
+                    <img src={item.images?.[0]} alt="" />
                 </div>
                 <div className="product-main">
+                    <div>
+                        <span>đã bán : {item.sold}</span>
+                    </div>
                     <div className="product-title">
                         <span className="product-name">
-                          {item.name}
+                            {item.title}
                         </span>
-                        <span>
-                          {item.create_at} </span>
+
                     </div>
                     <div className="product-price">
-                        <strong className="product-pricenew">
-                          {item.price.amount} {item.price.currency}
+                        <span className="product-pricenew">12đ</span>
+                        <strong className="product-priceold">
+                            {item.price.amount} {item.price.currency}
                         </strong>
-                        <span className="product-priceold">12đ</span>
                     </div>
                 </div>
-                <div className="product-note">new</div>
-               </NavLink>
+                {item.discountPercentage > 0 &&
+                    <div className="product-note">-{item.discountPercentage}%</div>
+                }
+            </NavLink>
         </>
     )
 }

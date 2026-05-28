@@ -13,7 +13,7 @@ function CreateProduct() {
         const formdata = new FormData(form);
        const data = Object.fromEntries(formdata); 
        console.log(data);
-       fetch("http://localhost:5000/admin/api/v1/products/create",{
+       fetch("http://localhost:5000/sellers/api/v1/products/create",{
         method : "POST",
          headers: {
         "Content-Type": "application/json"
@@ -28,6 +28,7 @@ function CreateProduct() {
     }
     const formProps : objForm = {
         type : true,
+        display : false,
         value : "thêm sản phẩm"
     }
     return (

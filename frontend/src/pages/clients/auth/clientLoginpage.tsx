@@ -1,8 +1,11 @@
-function ClientsLoginPage(){
-    return (
-        <>
-        <div> trang login clients</div>
-        </>
-    )
+import LoginClients from "../../../features/auth/components/loginClients";
+
+function ClientsLoginPage() {
+ 
+  return (
+    <>
+      <LoginClients />
+    </>
+  )
 }
 export default ClientsLoginPage;

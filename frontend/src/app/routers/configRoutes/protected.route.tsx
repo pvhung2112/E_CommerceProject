@@ -3,7 +3,7 @@ export type props ={
     reDirect : string
 }
 function Protected( {reDirect} : props){
-    const login =false;
+    const login =true;
     return(
         login ? <Outlet/> : <Navigate to={reDirect}/> 
     )

@@ -61,10 +61,16 @@ const productSchema = new Schema({
       default: 0
    }
   ,
-  deleted : {
-    type : Date,
-    default : null
-  }
+ deleted: {
+    status: {
+        type: Boolean,
+        default: false
+    },
+    deletedAt: {
+        type: Date,
+        default: null
+    }
+}
   ,
   slug : {
    type : String,

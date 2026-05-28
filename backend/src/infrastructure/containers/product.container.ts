@@ -5,6 +5,7 @@ import { productRepository } from "../database/repositories/product.repository";
 import { getDetailproductUc } from "../../application/usecases/products/getDetailproduct.usecase";
 import { createProductUc } from "../../application/usecases/products/createProduct.usecase";
 import { editProductuc } from "../../application/usecases/products/editProduct.usecase";
+import { deleteOneproductUc } from "../../application/usecases/products/deleteProduct.usecase";
 
 export const productContainer = (): productdependenceIject => {
     const productRepo: IproductRepository = new productRepository();
@@ -12,6 +13,7 @@ export const productContainer = (): productdependenceIject => {
         getallproductUc: new getallProductUc(productRepo),
         getdetailproductUc: new getDetailproductUc(productRepo),
         createproductUc: new createProductUc(productRepo),
-        updateOneproductuc : new editProductuc(productRepo)
+        updateOneproductuc : new editProductuc(productRepo),
+        deleteOneproductuc : new deleteOneproductUc(productRepo),
     }
 }

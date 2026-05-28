@@ -4,9 +4,9 @@ import AllRouters from './routers/configRoutes/allrouters.route';
 
 
 function App() {
-  return(
+  return (
     <>
-    <AllRouters/>
+      <AllRouters />
     </>
   )
 }

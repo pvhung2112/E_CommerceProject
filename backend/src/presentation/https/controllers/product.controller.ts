@@ -12,7 +12,6 @@ export class productController {
     }
     getDetailproduct = async (req: Request<{ id: string }>, res: Response): Promise<void> => {
         const id = req.params.id;
-
         const product = await this.deps.getdetailproductUc.execute(id);
         res.status(200).json({
             status: true,
@@ -41,7 +40,7 @@ export class productController {
             message: "Tạo sản phẩm thành công"
         })
     }
-    editProduct = async (req: Request<{id : string}>, res: Response) => {
+    editProduct = async (req: Request<{id : string}>, res: Response): Promise<void> => {
         console.log(req.body);
         const {id}  = req.params;
         const dto: productDtoinput = {
@@ -64,5 +63,13 @@ export class productController {
             message: "sửa sản phẩm thành công"
         })
 
+    }
+    deleteProduct= async(req : Request<{id : string}>,res : Response) : Promise<void>=>{
+        const {id} = req.params;
+        await this.deps.deleteOneproductuc.execute(id);
+        res.status(200).json({
+            status: true,
+            message: "xóa sản phẩm thành công"
+        })
     }
 }

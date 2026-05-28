@@ -6,5 +6,6 @@ export const productRouter =(deps : dependencies)=>{
     const productControll : productController = new productController(deps.product)
     router.post("/create",productControll.createProduct)
     router.patch("/edit/:id",productControll.editProduct)
+    router.patch("/delete/:id",productControll.deleteProduct)
     return router;
 }
