@@ -8,7 +8,7 @@ import { productWithstats } from "../../../application/ports/type/product.type";
 export class productRepository implements IproductRepository {
     async getAll(): Promise<productWithstats[]> {
         const find = {
-            deleted: null
+            "deleted.status": false
         }
         const docs = await productModel.find(find).lean();
         const items = productMapper.todomain(docs);
@@ -18,7 +18,7 @@ export class productRepository implements IproductRepository {
     async getDetail(id: string): Promise<productWithstats> {
         const find = {
             _id: id,
-            deleted: null
+            "deleted.status":false
         }
         const doc = await productModel.findOne(find).lean();
         const [item] = productMapper.todomain([doc]);

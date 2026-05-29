@@ -1,7 +1,8 @@
 import { Express } from "express"
-import { productRouter } from "./product.route";
+
 import { dependencies } from "../../../../infrastructure/containers/index.container";
+import { categoryRouter } from "./category.route";
 export  const routerAdmin =(app : Express, deps : dependencies)=>{
-    const API = "/sellers/api/v1";
-    app.use(`${API}/products`,productRouter(deps));
+    const API = "/admin/api/v1";
+    app.use(`${API}/category`,categoryRouter(deps))
 }
