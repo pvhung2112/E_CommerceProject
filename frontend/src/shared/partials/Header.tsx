@@ -19,7 +19,7 @@ return(
                 <NavLink to="/">shop</NavLink>
             </li>
              <li>
-                <NavLink to="/cellers/:id">cellers</NavLink>
+                <NavLink to="/cellers">cellers</NavLink>
             </li>
              <li>
                 <NavLink to="/giude">giude</NavLink>

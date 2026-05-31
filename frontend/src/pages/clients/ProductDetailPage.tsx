@@ -15,9 +15,9 @@ function ProductDetailPage() {
     },[])
     console.log(data);
   return (
-    <div style={{ minHeight: "80vh" }}>
-   {data ?  <ProductDetail key={data?.id} data={data} /> : "đang load dữ liệu"}  
-    </div>
+    
+   data ?  <ProductDetail key={data?.id} data={data} /> : "đang load dữ liệu"
+  
   );
 }
 

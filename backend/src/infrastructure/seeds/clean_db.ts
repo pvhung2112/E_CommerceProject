@@ -14,7 +14,7 @@ const clean = async () => {
     const collectionNames = collections.map(c => c.name);
     console.log("Current collections in database:", collectionNames);
 
-    const keepCollections = ["users", "products", "reviews"];
+    const keepCollections = ["users", "products", "reviews", "categories"];
     let droppedCount = 0;
 
     for (const colName of collectionNames) {

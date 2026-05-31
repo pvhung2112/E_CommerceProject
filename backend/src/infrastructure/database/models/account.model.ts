@@ -7,7 +7,7 @@ const accountSchema = new Schema({
   },
   rolesId :{
     type : Schema.Types.ObjectId ,
-    default : ""
+    default : null
   },
   email :{
     type : String,
@@ -39,4 +39,5 @@ const accountSchema = new Schema({
 },{
     timestamps : true
 });
-export const accountModel = mongoose.model('accounts', accountSchema ,'accounts');
+export const userModel = mongoose.model('users', accountSchema, 'users');
+export const accountModel = mongoose.model('user', accountSchema, 'users');

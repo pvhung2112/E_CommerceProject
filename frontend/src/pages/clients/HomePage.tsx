@@ -15,10 +15,8 @@ function HomePage(){
   console.log(data);
     return(
         <>
-        <main className="content">
-            <Banner/>
+          <Banner/>
           <ProductList  data={data}/>
-        </main>
         </>
     )
         

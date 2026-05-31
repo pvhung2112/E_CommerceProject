@@ -4,7 +4,10 @@ import { categoryMapper } from "../../mappers/category.mapper";
 import { categoryModel } from "../models/category.model";
 export class categoryRepository implements ICategoryRepository{
  async getAll(): Promise<categoryEntity[]>{
-    const docs = await categoryModel.find({});
+   const find = {
+      "deleted.status" : false
+   };
+    const docs = await categoryModel.find(find).lean();
     const items = categoryMapper.todomain(docs);
     return items;
  }

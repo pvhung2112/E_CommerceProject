@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { productModel } from "../database/models/product.model";
-import { userModel } from "../database/models/account.model";
+import { accountModel } from "../database/models/account.model";
 import { reviewModel } from "../database/models/reviews.model";
 import slugify from "slugify";
 
@@ -172,7 +172,7 @@ const seed = async () => {
     console.log("Connected to MongoDB");
 
     // 1. Dọn dẹp dữ liệu cũ của cả 3 bảng
-    await userModel.deleteMany({});
+    await accountModel.deleteMany({});
     console.log("Cleared old users");
     await productModel.deleteMany({});
     console.log("Cleared old products");
@@ -180,11 +180,11 @@ const seed = async () => {
     console.log("Cleared old reviews");
 
     // 2. Seed Users
-    const createdUsers = await userModel.insertMany(seedUsers);
+    const createdUsers = await accountModel.insertMany(seedUsers);
     console.log(`Seeded ${createdUsers.length} users successfully`);
 
-    const seller = createdUsers.find(u => u.roles.includes("seller")) || createdUsers[0];
-    const customers = createdUsers.filter(u => u.roles.includes("user"));
+    const seller = createdUsers.find((_: any, idx: number) => seedUsers[idx].roles.includes("seller")) || createdUsers[0];
+    const customers = createdUsers.filter((_: any, idx: number) => seedUsers[idx].roles.includes("user"));
 
     // 3. Seed Products ban đầu
     const productsToInsert = rawProducts.map((p, idx) => ({

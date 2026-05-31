@@ -14,8 +14,11 @@ function Products() {
   },[])
   return (
     <>
+
     <NavLink to="/admin/products/create">thêm product</NavLink>
     <ProductTable data={data}/>
+
+    
     </>
   );
  }
