@@ -1,12 +1,11 @@
 export class categoryEntity{
     private readonly _id : string;
     private  title : string;
-
-    private parentId : string;
+    private parentId ?: string;
     private status : string;
-    private description : string;
+    private description ?: string;
 
-    constructor(_id: string, title: string,  parentId: string, status: string, description: string) {
+    constructor(_id: string, title: string,  parentId: string | undefined, status: string, description: string | undefined) {
         this._id = _id;
         this.title = title;
         
@@ -21,13 +20,13 @@ export class categoryEntity{
         return this.title;
     }   
    
-    getParentId(): string {
+    getParentId(): string |undefined {
         return this.parentId;
     }
     getStatus(): string {
         return this.status;
     }
-    getDescription(): string {
+    getDescription(): string |undefined{
         return this.description;
     }  
     setTitle(title: string): void {

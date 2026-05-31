@@ -5,14 +5,9 @@ const categorySchema = new Schema({
   title: {
     type: String
   },
-  position: {
-    type: Number
-  }
-  ,
   parentId: {
    type :  Schema.Types.ObjectId,
-   ref : "user",
-  required : true
+   ref : "user"
   }
   ,
   status : {

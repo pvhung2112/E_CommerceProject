@@ -6,5 +6,6 @@ export const categoryRouter =(deps : dependencies)=>{
     const router = Router();
     const categorycontroller = new categoryController(deps.category);
     router.get("/",categorycontroller.getAllcategory)
+    router.post("/create",categorycontroller.createOnecategory)
     return router;
 }

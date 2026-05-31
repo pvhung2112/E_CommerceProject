@@ -9,4 +9,11 @@ export class categoryRepository implements ICategoryRepository{
     return items;
  }
    
+ 
+ async save(item : categoryEntity) : Promise<categoryEntity>{
+   const doc= categoryMapper.toPersistence(item);
+   await doc.save();
+  const [category]= categoryMapper.todomain([doc]);
+  return category;
+ }
 }

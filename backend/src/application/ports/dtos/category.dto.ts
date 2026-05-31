@@ -6,3 +6,9 @@ export interface CategoryDtoOutput {
     status: string;
 }
    
+export interface categoryDtoinput {
+  title: string;
+  description?: string;
+  parentId?: string;
+  status: string;
+}
