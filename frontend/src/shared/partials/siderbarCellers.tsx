@@ -6,10 +6,13 @@ function SiderbarCellers() {
             <div>
                 <ul>
                     <li>
-                        <NavLink to="/cellers/dashbroad">dashboard</NavLink>
+                        <NavLink to="/cellers/dashboard">dashboard</NavLink>
                     </li>
                     <li>
                         <NavLink to="/cellers/products">quản lí sản phẩm</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/cellers/category">quản lí category</NavLink>
                     </li>
                    
                 </ul>

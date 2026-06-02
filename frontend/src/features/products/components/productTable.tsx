@@ -8,11 +8,10 @@ function ProductTable({ data }: props) {
   console.log(data);
   const handleClick = (id : string)=>{
     console.log(id)
-    // fetch(`http://localhost:5000/sellers/api/v1/products/delete/${id}`,{
-    //   method : "PATCH",
-    
-    // }
-    // )
+    fetch(`http://localhost:5000/sellers/api/v1/products/delete/${id}`,{
+      method : "PATCH"
+    }
+    )
   }
   return (
     <>

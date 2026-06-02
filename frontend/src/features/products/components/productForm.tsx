@@ -8,12 +8,12 @@ type props = {
 }
 function ProductForm({ type, eventForm }: props) {
     console.log(type);
-    const [status,setStatus] = useState<string | null>(null);
-    useEffect(()=>{
-        if(type.data){
+    const [status, setStatus] = useState<string | null>(null);
+    useEffect(() => {
+        if (type.data) {
             setStatus(type.data.status)
         }
-    },[type.data?.status])
+    }, [type.data?.status])
     return (
         <>
 
@@ -78,17 +78,17 @@ function ProductForm({ type, eventForm }: props) {
                         placeholder="Nhập mô tả chi tiết về sản phẩm..."
                         defaultValue={type.data?.description || ""}
                     />
-                </div>  
+                </div>
                 <div>
-                   {type.display && <div>
-                        <input type="radio" name="status" id="active" value="active" checked={status === "active"} onChange={(e)=>setStatus(e.target.value)}/>
+                    {type.display && <div>
+                        <input type="radio" name="status" id="active" value="active" checked={status === "active"} onChange={(e) => setStatus(e.target.value)} />
                         <label htmlFor="active">Hoạt động</label>
 
-                        <input type="radio" name="status" id="inactive" value="inactive" checked={status === "inactive"} onChange={(e)=>setStatus(e.target.value)}/>
+                        <input type="radio" name="status" id="inactive" value="inactive" checked={status === "inactive"} onChange={(e) => setStatus(e.target.value)} />
                         <label htmlFor="inactive">Không hoạt động</label>
-                   </div> }
-                    
-                    
+                    </div>}
+
+
                 </div>
 
                 <div className="cp-actions">

@@ -10,6 +10,7 @@ import CellerProtected from "./configRoutes/cellersProtected.route";
 import ProductRouter from "./childrens/product.route";
 import CellersPage from "../../pages/clients/cellers/cellersPage";
 import CellerDashboard from "../../features/cellsers/components/Dashboard";
+import categoryRouter from "./childrens/category.route";
 export const ClientRouter = [
     {
         path: "/login",
@@ -57,9 +58,10 @@ export const ClientRouter = [
                                     {
                                         path: "dashboard",
                                          element: <CellerDashboard />
-                                    }
-                                    ,
-                                    [...ProductRouter()]
+                                    },
+                                    ...ProductRouter(),
+                                    ...categoryRouter()
+
                                 ]
                             }
                         ]

@@ -29,11 +29,11 @@ const categorySchema = new Schema({
         default: null
     }
 }
-  ,
-  slug : {
-   type : String,
-   unique : true
-}
+//   ,
+//   slug : {
+//    type : String,
+//    unique : true
+// }
 }, {
   timestamps: true
 });
