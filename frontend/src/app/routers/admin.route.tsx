@@ -2,7 +2,7 @@ import AdminLayout from "../../layouts/AdminLayout";
 import Protected from "./configRoutes/protected.route";
 import AdminLoginPage from "../../pages/admin/auth/adminLoginpage";
 import categoryRouter from "./childrens/category.route";
-import permissionRouter from "./childrens/permission.route";
+import roleRouter from "./childrens/role.route";
 import DashboardPage from "../../pages/admin/dashboardPage";
 import { Navigate } from "react-router-dom";
 //private
@@ -26,7 +26,7 @@ export const adminRouter = [
                         path : "dashboard",
                         element : <DashboardPage/>
                     },
-                    ...permissionRouter(),
+                    ...roleRouter(),
                     ...categoryRouter()
                 ]
             }
