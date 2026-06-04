@@ -1,14 +1,10 @@
 import AdminLayout from "../../layouts/AdminLayout";
 import Protected from "./configRoutes/protected.route";
-import DashBoardPage from "../../pages/admin/users/DashBoardPage";
-
-import OrdersPage from "../../pages/admin/oders/OrdersPage";
-import CategoriesPage from "../../pages/admin/categories/categoriesPage";
-import UsersPage from "../../pages/admin/UsersPage";
-import SettingsPage from "../../pages/admin/SettingsPage";
-
 import AdminLoginPage from "../../pages/admin/auth/adminLoginpage";
-
+import categoryRouter from "./childrens/category.route";
+import permissionRouter from "./childrens/permission.route";
+import DashboardPage from "../../pages/admin/dashboardPage";
+import { Navigate } from "react-router-dom";
 //private
 export const adminRouter = [
     {
@@ -23,25 +19,15 @@ export const adminRouter = [
                 element: <Protected reDirect="/admin/login" />,
                 children: [
                     {
-                        path: "dashboard",
-                        element: <DashBoardPage />
+                        index : true,
+                        element : <Navigate to="dashboard" replace/>
                     },
                     {
-                        path: "orders",
-                        element: <OrdersPage />
+                        path : "dashboard",
+                        element : <DashboardPage/>
                     },
-                    {
-                        path: "categories",
-                        element: <CategoriesPage />
-                    },
-                    {
-                        path: "users",
-                        element: <UsersPage />
-                    },
-                    {
-                        path: "settings",
-                        element: <SettingsPage />
-                    }
+                    ...permissionRouter(),
+                    ...categoryRouter()
                 ]
             }
         ]

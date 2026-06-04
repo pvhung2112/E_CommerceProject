@@ -1,5 +1,5 @@
-import CategoryPage from "../../../pages/clients/category/categoryPage";
-import CreateCategoryPage from "../../../pages/clients/category/categoryCreatepage";
+import CategoryPage from "../../../pages/admin/category/categoryPage";
+import CreateCategoryPage from "../../../pages/admin/category/categoryCreatepage";
 
 function categoryRouter(){
 

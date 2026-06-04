@@ -11,10 +11,6 @@ function SiderbarCellers() {
                     <li>
                         <NavLink to="/cellers/products">quản lí sản phẩm</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/cellers/category">quản lí category</NavLink>
-                    </li>
-                   
                 </ul>
             </div>
         </>
