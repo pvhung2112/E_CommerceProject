@@ -6,6 +6,7 @@ export class roleEntity{
         this.id = id;
         this.name = name;
         this.permissionIds = permissionIds;
+
     }
     getId() : string{
         return this.id;
@@ -13,6 +14,7 @@ export class roleEntity{
     getName() : string{
         return this.name;
     }
+   
     getPermissionIds() : string[]{
         return this.permissionIds;
     }
@@ -22,5 +24,5 @@ export class roleEntity{
     setPermissionIds(permissionIds : string[]){
         this.permissionIds = permissionIds;
     }
-
+  
 }

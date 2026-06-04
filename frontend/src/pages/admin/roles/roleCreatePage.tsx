@@ -1,7 +1,7 @@
-function RoleCreatePage(){
-    return(
+function RoleCreatePage() {
+    return (
         <>
-        <div>thẻ tạo role</div>
+            <div>thẻ tạo role</div>
         </>
     )
 }

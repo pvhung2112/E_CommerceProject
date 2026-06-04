@@ -2,7 +2,27 @@ import mongoose from "mongoose";
 import { productModel } from "../database/models/product.model";
 import { accountModel } from "../database/models/account.model";
 import { reviewModel } from "../database/models/reviews.model";
+import { roleModel } from "../database/models/role.model";
 import slugify from "slugify";
+
+const seedRoles = [
+  {
+    name: "Administrator",
+    permissionIds: []
+  },
+  {
+    name: "Seller",
+    permissionIds: []
+  },
+  {
+    name: "Customer",
+    permissionIds: []
+  },
+  {
+    name: "Moderator",
+    permissionIds: []
+  }
+];
 
 const seedUsers = [
   {
@@ -171,13 +191,19 @@ const seed = async () => {
     await mongoose.connect(url);
     console.log("Connected to MongoDB");
 
-    // 1. Dọn dẹp dữ liệu cũ của cả 3 bảng
+    // 1. Dọn dẹp dữ liệu cũ của các bảng
     await accountModel.deleteMany({});
     console.log("Cleared old users");
     await productModel.deleteMany({});
     console.log("Cleared old products");
     await reviewModel.deleteMany({});
     console.log("Cleared old reviews");
+    await roleModel.deleteMany({});
+    console.log("Cleared old roles");
+
+    // Seed Roles
+    const createdRoles = await roleModel.insertMany(seedRoles);
+    console.log(`Seeded ${createdRoles.length} roles successfully`);
 
     // 2. Seed Users
     const createdUsers = await accountModel.insertMany(seedUsers);
@@ -208,17 +234,17 @@ const seed = async () => {
 
     // 4. Seed Reviews ngẫu nhiên
     const reviewsToInsert: any[] = [];
-    
+
     // Mỗi sản phẩm sẽ có từ 1 đến 3 đánh giá ngẫu nhiên
     for (const product of createdProducts) {
       const reviewCount = Math.floor(Math.random() * 3) + 1; // 1 to 3 reviews
       for (let i = 0; i < reviewCount; i++) {
         // Chọn ngẫu nhiên customer đánh giá
         const randomCustomer = customers[Math.floor(Math.random() * customers.length)];
-        
+
         // Chọn số sao ngẫu nhiên (3, 4 hoặc 5)
         const stars = Math.floor(Math.random() * 3) + 3; // 3 to 5 stars
-        
+
         // Chọn comment phù hợp với số sao
         let comment = "";
         if (stars === 5) {
@@ -248,7 +274,7 @@ const seed = async () => {
       if (productReviews.length > 0) {
         const totalStars = productReviews.reduce((sum, r) => sum + r.star, 0);
         const averageRating = Math.round((totalStars / productReviews.length) * 10) / 10;
-        
+
         await productModel.updateOne(
           { _id: product._id },
           {

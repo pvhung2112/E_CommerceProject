@@ -7,11 +7,11 @@ function AdminSidebar() {
         <span className="logo-main">Maison Admin</span>
         <span className="logo-sub">GLOBAL CURATOR</span>
       </div>
-      
+
       <ul className="admin-sidebar-menu">
         <li>
-          <NavLink 
-            to="/admin/dashboard" 
+          <NavLink
+            to="/admin/dashboard"
             className={({ isActive }) => isActive ? 'active' : ''}
           >
             <svg stroke="currentColor" fill="none" strokeWidth="1.5" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -23,11 +23,11 @@ function AdminSidebar() {
             Overview
           </NavLink>
         </li>
-        
-       
-         
-          <li>
-          <NavLink 
+
+
+
+        <li>
+          <NavLink
             to="/admin/category"
             className={({ isActive }) => isActive ? 'active' : ''}
           >
@@ -38,8 +38,8 @@ function AdminSidebar() {
             category
           </NavLink>
         </li>
-          <li>
-          <NavLink 
+        <li>
+          <NavLink
             to="/admin/role"
             className={({ isActive }) => isActive ? 'active' : ''}
           >
