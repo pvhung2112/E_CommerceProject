@@ -28,6 +28,7 @@ export const adminRouter = [
                     },
                     ...roleRouter(),
                     ...categoryRouter()
+                    
                 ]
             }
         ]

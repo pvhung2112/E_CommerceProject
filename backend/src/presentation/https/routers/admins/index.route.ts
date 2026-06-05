@@ -8,5 +8,5 @@ export const routerAdmin = (app: Express, deps: dependencies) => {
     const API = "/admin/api/v1";
     app.use(`${API}/category`, categoryRouter(deps))
     app.use(`${API}/roles`, roleRouter(deps))
-    app.use(`${API}/permission`, permissionRouter(deps))
+    app.use(`${API}/permissions`, permissionRouter(deps))
 }
