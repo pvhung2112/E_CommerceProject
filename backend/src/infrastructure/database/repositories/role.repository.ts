@@ -8,4 +8,7 @@ export class roleRepository implements IRoleRepository {
         const items = roleMapper.todomain(docs);
         return items;
     }
+    // async updatePermissions(ids: string[], permissionids: string[]): Promise<roleEntity[]> {
+
+    // }
 }

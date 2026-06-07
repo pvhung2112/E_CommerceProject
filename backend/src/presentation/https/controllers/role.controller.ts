@@ -10,4 +10,8 @@ export class roleController {
             message: "lấy danh sách thành công"
         })
     }
+    // updatePermissions = async (req: Request, res: Response) => {
+    //     const inputDto[] = req.body;
+
+    // }
 }
