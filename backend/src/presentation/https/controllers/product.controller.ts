@@ -19,7 +19,7 @@ export class productController {
         })
     }
     createProduct = async (req: Request, res: Response): Promise<void> => {
-        console.log(req.body);
+     
         const dto: productDtoinput = {
             title: req.body.name,
             price: {
@@ -41,7 +41,7 @@ export class productController {
         })
     }
     editProduct = async (req: Request<{id : string}>, res: Response): Promise<void> => {
-        console.log(req.body);
+   
         const {id}  = req.params;
         const dto: productDtoinput = {
             title: req.body.name,

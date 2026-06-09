@@ -5,7 +5,7 @@ export class getAllpermissionuc{
     constructor(private iPermissionrepository : IPermissionRepository){}
    async execute() : Promise<permissionDtooutput[]> {
         const items = await this.iPermissionrepository.getAll();
-        console.log(items);
+        // console.log(items);
         const output =  items.map((item)=>{
             return {
                 id : item.getId(),

@@ -4,11 +4,11 @@ const { Schema } = mongoose;
 const permissionSchema = new Schema({
   name: {
     type: String,
-    require : true
+    required : true
   },
   group: {
     type: String,
-     require : true
+     required : true
   },
   slug : {
    type : String,

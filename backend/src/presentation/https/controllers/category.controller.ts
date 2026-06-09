@@ -19,7 +19,7 @@ export class categoryController{
             parentId: req.body.parentId,
             status: req.body.status
         }
-        console.log(req.body);
+        
         const category = await this.deps.createOnecategoryUc.execute(dto);
         console.log(category);
         res.status(201).json(

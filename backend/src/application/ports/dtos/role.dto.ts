@@ -7,3 +7,7 @@ export interface roleDtooutput {
     name: string;
     permissionIds: string[];
 }
+export interface updatePersinputdto{
+    id: string;
+    permissionIds: string[];
+}
