@@ -48,3 +48,6 @@ temp/
 # Cache
 .cache/
 .eslintcache
+
+# Seeds & Database
+backend/src/infrastructure/seeds/
