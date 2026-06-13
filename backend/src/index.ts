@@ -4,6 +4,8 @@ import cors from "cors";
 import { routerClient } from "./presentation/https/routers/clients/index.route";
 import { routerAdmin } from "./presentation/https/routers/admins/index.route";
 import {connect} from "./infrastructure/configs/connect";
+import cookieParser from 'cookie-parser';
+
 import { Containers } from "./infrastructure/containers/index.container";
 const app : Express = express();
 const port: number = Number(process.env.PORT) || 5000;
@@ -17,6 +19,7 @@ const corsOptions = {
 };
 
 app.use(express.json());
+app.use(cookieParser()); 
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
 

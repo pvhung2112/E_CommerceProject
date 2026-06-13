@@ -1,7 +1,8 @@
+import LoginClients from "../../../features/auth/components/loginClients";
 function AdminLoginPage(){
     return (
         <>
-        <div> trang login</div>
+        <LoginClients />
         </>
     )
 }

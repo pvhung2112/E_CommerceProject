@@ -3,7 +3,7 @@ export type props ={
     reDirect : string
 }
 function Protected( {reDirect} : props){
-    const login = true;
+    const login = false;
     return(
         
         <main style={ {marginTop : "110px"} }>

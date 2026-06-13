@@ -12,7 +12,7 @@ return(
                     <div>
                         <label htmlFor="">tài khoản</label>
                         <div>
-                            <input type="text" />
+                            <input type="text" name="gmail" />
                         </div>
                         
                     </div>
@@ -20,7 +20,7 @@ return(
                     <div>
                         <label htmlFor="">mật khẩu</label>
                         <div>
-                            <input type="password" />
+                            <input type="password" name="password"/>
                         </div>
                         
                     </div>
@@ -28,7 +28,7 @@ return(
                         <Link to="/"> quên mật khẩu</Link>
                     </div>
                     
-                    <button>đăng nhập</button>
+                    <button type="submit" >đăng nhập</button>
                     <div>
                         <span>chưa có tài khoản</span>
                          <Link to="/"> đăng kí</Link>
