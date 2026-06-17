@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { JWT_CONFIG } from '../configs/jwt';
- // Tạo token(header.payload.sign) header là ngầm , payload
+ // Tạo token(header.payload.sign) header là ngầm , payload header
 export class JwtService {
   
   static generateAccessToken(payload: any): string {

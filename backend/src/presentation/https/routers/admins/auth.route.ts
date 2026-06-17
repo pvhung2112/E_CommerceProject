@@ -7,5 +7,6 @@ export const authRouter = (deps : dependencies) => {
     const authControl = new accountController(deps.auth);
     // router.post('/register', authControl.registerAccount);
     router.post("/login", authControl.loginAccount);
+    router.post("/refresh-token", authControl.refreshToken);
     return router;
 }

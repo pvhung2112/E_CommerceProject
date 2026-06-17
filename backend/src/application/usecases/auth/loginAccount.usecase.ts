@@ -11,7 +11,7 @@ export class loginAccountuc{
         throw new Error('Email không tồn tại');
         }
         console.log("Mật khẩu Postman:", input.password);
-console.log("Mật khẩu trong DB:", account.getPassword());
+        console.log("Mật khẩu trong DB:", account.getPassword());
         const isPasswordValid = await bcrypt.compare(input.password, account.getPassword());
         if (!isPasswordValid) {
         throw new Error('Mật khẩu sai');
